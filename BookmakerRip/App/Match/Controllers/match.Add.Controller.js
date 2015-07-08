@@ -1,5 +1,6 @@
 var BookmakerRip;
 (function (BookmakerRip) {
+    //
     var MatchAddController = (function () {
         function MatchAddController(matchService) {
             this.matchService = matchService;

@@ -1,0 +1,12 @@
+﻿<div class="container">
+    <h3>{{ctrl.vm.bookmaker.name}}</h3>
+    <br/>
+    Beløb : <input type="text" ng-model="ctrl.vm.deposit.amount" />
+    <br/>
+    Antal gennemspilninger : <input type="text" ng-model="ctrl.vm.deposit.runThroughs"/>
+    <br/>
+    Min odds : <input type="text" ng-model="ctrl.vm.deposit.minOdds" price/>
+    <br/>
+    {{ctrl.vm.deposit}}
+    <input type="submit" value="Indbetal" ng-click="ctrl.addDeposit(ctrl.vm.deposit)"/>
+</div>

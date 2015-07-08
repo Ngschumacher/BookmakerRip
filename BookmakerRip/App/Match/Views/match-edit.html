@@ -1,0 +1,60 @@
+﻿<div class="container">
+    <span ng-click="ctrl.vm.bookmakerView = !ctrl.vm.bookmakerView">Switch view</span> <br/>
+    Name: {{ctrl.vm.match.name}}
+    <div ng-if="!ctrl.vm.bookmakerView">
+        <table ng-repeat="matchOption in ctrl.vm.match.matchOptions">
+            <tr>
+                <th colspan="4">
+                    {{matchOption.name}}
+                </th>
+            </tr>
+            <tr ng-repeat="matchOdds in matchOption.matchOdds">
+                <td>
+                    {{matchOdds.bookmakerName}}
+                </td>
+                <td ng-repeat="odds in matchOdds.odds">
+                    <input type="text" ng-model="odds.value" price/>
+                </td>
+                <td>
+                    {{ctrl.vm.matchFactory.getReturnPayment(matchOdds)}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Best Odds
+                </td>
+
+                <td ng-repeat="option in matchOption.matchOddsOptions">
+                    {{option.name}} - {{ctrl.vm.matchFactory.getBestOdds(matchOption, option.id)}}
+                </td>
+                <td>
+                    {{ctrl.vm.matchFactory.getBestOddsReturnPayment(matchOption)}}
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div ng-if="ctrl.vm.bookmakerView">
+        <table ng-repeat="bookmaker in ctrl.vm.bookmakers">
+            <tr>
+                <th colspan="4">
+                    {{bookmaker.name}}
+                </th>
+            </tr>
+            <tr ng-repeat="matchOption in ctrl.vm.match.matchOptions" >
+                <td>
+                    {{matchOption.name}}
+                </td>
+                <td ng-repeat="matchOddsOption in matchOption.matchOddsOptions">
+                    {{matchOddsOption.name}}<br/>
+                    <input type="text" ng-model="ctrl.getMatchOddsByBookmakerId(matchOption.id, matchOddsOption.id, bookmaker.id).value" price />
+                </td>
+                <td>
+                    {{ctrl.vm.matchFactory.getReturnPaymentByBookmaker(matchOption, bookmaker.id)}}
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <input type="submit" value="Gem" ng-click="ctrl.addMatch()"/>
+</div>

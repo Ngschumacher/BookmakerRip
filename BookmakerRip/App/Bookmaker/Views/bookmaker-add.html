@@ -1,0 +1,15 @@
+﻿<div class="container">
+
+    <div class="bookmaker-add">
+        Navn : <input type="text" name="name" ng-model="ctrl.newBookmaker.name"/>
+        <br/>
+
+        <input type="submit" name="tilføj bookmaker" ng-click="ctrl.addBookmaker(ctrl.newBookmaker)"/>
+        {{ctrl.newBookmaker}}
+    </div>
+
+    <div ng-repeat="bm in ctrl.vm.bookmakers">
+        {{bm.name}} - <a ng-click="deleteBookmaker(bm)">Slet</a>
+    </div>
+    <div>her er en ny div</div>
+</div>

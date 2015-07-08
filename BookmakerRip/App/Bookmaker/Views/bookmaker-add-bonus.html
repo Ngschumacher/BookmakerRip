@@ -1,0 +1,16 @@
+﻿<div class="bookmaker-add-bonus" ng-if="ShowTab == 'AddBonus'">
+    Bookmaker : <select ng-model="Cash.BookmakerId" ng-options="bookmaker.Id as bookmaker.Name for bookmaker in Bookmakers"></select>
+    <br />
+
+    Indskud : <input type="text" name="deposit" ng-model="Cash.Amount" />
+    <br />
+
+    Omsætnings antal
+    <input type="number" ng-model="Cash.RunThroughs" />
+    <br />
+
+    Min Odds : <input type="text" ng-model="Cash.MinOdds" />
+    <br />
+
+    <input type="submit" name="tilføj " ng-click="AddCash(Cash)" />
+</div>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="/Scripts/App.js"></script>
+    <script src="~/App/Models/Model.js"></script>
+
+
+    <script src="~/App/Filters/comma2decimal.js"></script>
+    <script src="~/App/Filters/decimal2comma.js"></script>
+
+
+    <script src="/App/Services/Bookmaker.Service.js"></script>
+    <script src="/App/Services/Match.Service.js"></script>
+    <script src="~/App/Services/Deposit.Service.js"></script>
+    <script src="/App/Services/MatchOdds.Factory.js"></script>
+    
+    <script src="~/App/Directives/price.js"></script>
+
+
+    <script src="/App/Match/Controllers/match.Detail.Controller.js"></script>
+    <script src="/App/Match/Controllers/match.Edit.Controller.js"></script>
+    <script src="/App/Match/Controllers/match.List.Controller.js"></script>
+    
+    <script src="/App/Match/Controllers/match.Add.Controller.js"></script>
+    
+    <script src="/App/Bookmaker/Controllers/bookmaker.Detail.Controller.js"></script>
+    <script src="/App/Bookmaker/Controllers/bookmaker.Add.Controller.js"></script>
+    <script src="/App/Bookmaker/Controllers/bookmaker.List.Controller.js"></script>
+    <script src="~/App/Deposit/Controllers/deposit.Add.Controller.js"></script>
+
+</head>
+<body>
+<div ng-app="BookmakerRip">
+    <div class="header">
+        @RenderPage("_header.cshtml")
+    </div>
+    <div class="main">
+        @RenderBody()
+    </div>
+    <div class="footer">
+        @RenderPage("_footer.cshtml")
+    </div>
+</div>
+</body>
+</html>

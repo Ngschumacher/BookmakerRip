@@ -1,0 +1,33 @@
+﻿<div class="container">
+
+    <h2>Match list</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+            <tr ng-repeat="match in ctrl.vm.matches">
+                <td>
+                    {{match.name}}
+                </td>
+                <td>
+                    <a ng-href="#/match/{{match.id}}">Se kamp</a>
+                </td>
+                <td>
+                    <a ng-href="#/match/edit/{{match.id}}">Rediger kamp</a>
+                </td>
+                <td>
+                    <span ng-click="ctrl.deleteMatch(match.id)" class="link delete">Slet</span>
+                </td>
+            </tr>
+        </thead>
+    </table>
+</div>

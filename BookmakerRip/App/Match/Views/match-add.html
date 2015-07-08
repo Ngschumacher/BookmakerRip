@@ -1,0 +1,32 @@
+﻿<div class="container">
+    <div class="bookmaker-add-match">
+        Kamp navn : <input type="text" ng-model="ctrl.vm.match.name"/>
+        <br/>
+        <br />
+        Odds navn: <input type="text" ng-model="ctrl.vm.newMatchOption.name" />
+        <br/>
+        Options : <input type="text" ng-model="ctrl.vm.optionAmount" ng-change="ctrl.createOptions(ctrl.vm.optionAmount)" />
+        <br/>
+
+
+
+        <span ng-repeat="option in ctrl.vm.newMatchOption.matchOddsOptions">
+            <input ng-model="option.name" />
+        </span>
+        <br/>
+        <a ng-click="ctrl.addMatchOption()">tilføj mulighed</a>
+
+        <table>
+            <tr ng-repeat="matchOption in ctrl.vm.match.matchOptions">
+                <td>
+                    {{matchOption.name}} 
+                </td>
+                <td ng-repeat="matchOddsOption in matchOption.matchOddsOptions">
+                    {{matchOddsOption.name}}
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <input type="submit" name="tilføj " ng-click="ctrl.addMatch(ctrl.vm.match)" />
+    </div>
+</div>

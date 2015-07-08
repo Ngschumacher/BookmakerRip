@@ -1,0 +1,15 @@
+﻿<div class="container">
+    <h3>{{ctrl.vm.bookmaker.name}}</h3>
+    Saldo : {{ctrl.vm.bookmaker.totalAmount}}
+    <br/>
+    <a ng-href="#/bookmaker/deposit/{{ctrl.vm.bookmaker.id}}">Lav indbetaling</a>
+    <a ng-href="#/bookmaker/deposit/withdraw/ctrl.vm.bookmaker.id">Lav udbetaling</a>
+    <br/>
+
+    <h4>Betalings historik</h4>
+    <ul>
+        <li ng-repeat="deposit in ctrl.vm.bookmaker.deposits">
+            {{deposit.amount}}
+        </li>
+    </ul>
+</div>

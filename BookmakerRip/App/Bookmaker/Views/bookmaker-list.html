@@ -1,0 +1,35 @@
+﻿<div class="container">
+    {{message}}
+    <h2>Bookmaker list</h2>
+    <a href="#/bookmaker/add">Tilføj bookmaker</a>
+    <table>
+        <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+        <tr ng-repeat="bookmaker in ctrl.vm.bookmakers">
+            <td>
+                {{bookmaker.name}}
+            </td>
+            <td>
+                {{bookmaker.totalAmount}}
+            </td>
+            <td>
+                <a ng-href="#/bookmaker/{{bookmaker.id}}">Se</a>
+                -
+                <a ng-click="editBookmaker(bookmaker.id)">Rediger</a>
+                -
+                <span ng-click="ctrl.deleteBookmaker(bookmaker.id)" class="link delete">Slet</span>
+            </td>
+        </tr>
+        </thead>
+    </table>
+</div>

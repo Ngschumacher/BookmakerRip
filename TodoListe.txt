@@ -1,0 +1,36 @@
+Lav routing og ordenlig opsætning med controllers.
+
+Lav sådan man kan tilføje odds til hver enkelt bookmaker på et odds
+Beregning på odds, (tilbagebetaling på hver enkelt bookmaker)
+beregning på odds, så der bliver vist hvilke odds der er de bedste
+Beregning så man kan se hvor meget man kan oddse på de forskellige.
+Sørge for at der bliver taget højde for min-odds.
+
+Man kan se bookmakers, se hvilke odds der er lavet.
+
+Man kan sætte på en kamp (de odds man nu engang har lavet, hvad resultatet er).
+
+Total på kontoen på en bookmaker
+Manglende Gennemspilning på en / alle bookmakere
+
+
+Lav services i angular til API kald.
+
+Hvordan skal man gemme oddsne til en kamp ? 
+MatchOdds {MatchId, MatchOptionId, Value}
+
+
+Lav dependency injection så der kan laves test på services
+Begynd at lave tingene ordenligt, f.eks. når man har oprettet et dokument, skal man enten gå til dette dokument, eller gå til listevisningen.
+
+
+
+Opret services der holder dataen.
+Lav et directive der sørger for at $watch et odds object, eller listen af Odds. Den skal sørge for at gemme disse tilbage til servicen.
+Derefter vil der være mulighed for at kunne gemme side objecter direkte ned i databasen med debounce / on blur. 
+
+
+Logikken skal ligge i et service lag, så det er mere centraliseret, hvis der skal være logik i controlleren, skal det gøres på objecterne i servicen.
+
+
+Til slut skal der gerne være en mulighed for at kunne få tilbagebetalingsprocenten på de bedste odds.

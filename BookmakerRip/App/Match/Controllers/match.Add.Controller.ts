@@ -1,5 +1,5 @@
 ﻿module BookmakerRip {
-    
+    //
     export class MatchAddController {
         vm: {
             match?: Match;
